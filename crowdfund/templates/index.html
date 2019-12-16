@@ -1,0 +1,130 @@
+{% load static %}
+{% block title %}首页{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/animation.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+{% endblock %}
+{% block content %}
+<body style="background: #f0f0f0">
+	<div class="home-page full-page">
+		<a href="index.html" class="logo" style="width:130px;">
+			<img src="{% static 'images/17.png' %}">
+		</a>
+		<div class="home-menu">
+			<ul class="clearfix">
+				<li class="piston1">
+					<div class="menu-item">
+						<span>登录<br>注册</span>
+						<a href="{% url 'crowdfund:login' %}" class="menu-link1 menu-link">登录<br></a>
+						<a href="{% url 'crowdfund:register' %}" class="menu-link2 menu-link">注册<br></a>
+					</div>
+				</li>
+				<li class="piston2">
+					<div class="menu-item">
+						<span>优质<br>项目</span>
+						<a href="{% url 'crowdfund:search' %}" class="menu-link1 menu-link">项目<br>类型</a>
+						<a href="{% url 'crowdfund:search' %}" class="menu-link2 menu-link">项目<br>状态</a>
+						<a href="{% url 'crowdfund:search' %}" class="menu-link3 menu-link">行业<br>分类</a>
+						<a href="{% url 'crowdfund:search' %}" class="menu-link4 menu-link">所在<br>地区</a>
+					</div>
+				</li>
+				<li class="piston3">
+					<div class="menu-item">
+						<span>发起<br>众筹</span>
+						<a href="{% url 'crowdfund:add' %}" class="menu-link1 menu-link">众筹<br>项目</a>
+						<a href="{% url 'crowdfund:add' %}" class="menu-link2 menu-link">众筹<br>类型</a>
+						<a href="{% url 'crowdfund:add' %}" class="menu-link3 menu-link">众筹<br>阶段</a>
+						<a href="{% url 'crowdfund:add' %}" class="menu-link4 menu-link">众筹<br>金额</a>
+					</div>
+				</li>
+				<li class="piston4">
+					<div class="menu-item">
+						<span><a href="{% url 'crowdfund:guide' %}" class="singal">新手<br>指南</a></span>
+					</div>
+				</li>
+				<li class="piston5">
+					<div class="menu-item">
+						<span>个人<br>中心</span>
+						<a href="{% url 'crowdfund:myself' %}" class="menu-link1 menu-link">资料<br>管理</a>
+						<a href="{% url 'crowdfund:xiangmu' %}" class="menu-link2 menu-link">项目<br>管理</a>
+						<a href="{% url 'crowdfund:touzi' %}" class="menu-link3 menu-link">投资<br>管理</a>
+						<a href="{% url 'crowdfund:help' %}" class="menu-link4 menu-link">帮助<br>中心</a>
+					</div>
+				</li>
+			</ul>
+			<span class="wave wave1">
+				<img src="{% static 'images/wave1.png' %}">
+				<img src="{% static 'images/wave1.png' %}">
+			</span>
+			<span class="wave wave2">
+				<img src="{% static 'images/wave2.png' %}">
+				<img src="{% static 'images/wave2.png' %}">
+			</span>
+		</div>
+		<div class="copyright">众筹之光</div>
+	</div>
+	
+	<div class="loader">
+		<span class="text">众筹之光</span>
+		<span class="spinner"></span>
+	</div>
+</body>
+{% endblock %}
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript">
+$(function(){
+
+
+	function IndexMenu(){
+		var ww = $(window).width();
+		if(ww>=768){
+			$('.menu-item span,.menu-item a').mouseenter(function(){
+				$(this).parent().addClass('menu-on');
+				$('.wave').addClass('animation-paused');
+				$('.home-menu ul li').addClass('animation-paused');
+			});
+
+			$('.home-menu li').mouseleave(function(){
+				$(this).find('.menu-item').removeClass('menu-on');
+				$('.wave').removeClass('animation-paused');
+				$('.home-menu ul li').removeClass('animation-paused');
+			});
+		}else{
+			$('.menu-item span').on('click',function(event){
+				event.stopPropagation();
+				$(this).parent().toggleClass('menu-on');
+				$(this).parents('li').siblings().find('.menu-item').removeClass('menu-on');
+			});
+
+			$('body').on('click',function(){
+				$('.menu-item').removeClass('menu-on');
+			});
+
+			$('.nav-item').on('click',function(){
+				$(this).next().slideToggle();
+				$(this).parent().siblings().find('.dropdown').slideUp();
+			})
+		}
+	}
+	IndexMenu();
+	$(window).resize(function(event) {
+		IndexMenu();
+	});
+
+
+	$('.menu-btn').on('click',function(){
+		$('.page-menu').addClass('menu-show');
+	});
+
+	$('.menu-close').on('click',function(){
+		$('.page-menu').removeClass('menu-show');
+	})
+
+	setTimeout(function(){
+		$('.loader').hide();
+		$('.home-page').addClass('home-page-show');
+	},1000);
+
+});
+</script>

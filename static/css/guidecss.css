@@ -1,0 +1,185 @@
+
+
+a{
+    text-decoration: none;
+}
+.header_box1{ width:100%;
+             height:116px;
+			 background:#fefefe;
+             position:absolute;
+			 left:0;
+			 top:0;
+			 box-shadow:0px 4px 14px #666;
+			 z-index:600; }		
+
+/*.header_box2{ width:1200px;  
+			  margin:0 auto;}*/
+.logo_box img{ border-radius: 50%;
+    width: 100px;
+    height: 100px;}			
+.nam{
+    margin-left: 140px;
+    margin-top: -100px;
+}
+.menu{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    right:-400px;
+    top:-70px;
+}
+.menu span {
+    display: inline-block;
+    margin: 0px 15px;
+    font-size: 16px;
+    color: #4f4f4f;
+}
+.menu img{
+	position: absolute;
+    right: 10px;
+    top: -8px;
+    cursor: pointer;
+}
+body a {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+.menu{
+    width: 1180px;
+    height: 80px;
+    text-align: left;
+    margin: 0px auto;
+}
+/*.btns {
+    float: right;
+    margin-top:-70px;
+    margin-right: 80px;
+}*/
+button.white {
+    background: #fcfcfc;
+    color: #3fa9f5;
+    border: 1px #3fa9f5 solid;
+}
+button.blue {
+    background: #3fa9f5;
+    color: #ffffff;
+    border: 1px #3fa9f5 solid;
+}
+.birdmain{
+    margin-top: 200px;
+    height:2200px;
+    background-position: 0 340px;
+    background-repeat: no-repeat;
+}
+.realize.w290{
+    margin-top: 40px;
+}
+.w290 {
+    width: 290px;
+    margin: 40px auto 0;
+}
+.realize {
+    width: 228px;
+    text-align: center;
+    margin: 130px auto 0;
+    line-height: 50px;
+    background: #fff;
+    font-size: 24px;
+    border-radius: 25px;
+    color: #fd584d;
+}
+.rect1 {
+    width: 640px;
+    height: 300px;
+    padding: 0 95px;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    margin: 100px auto 114px;
+}
+.recttit1 {
+    background-position: 70px 76px;
+}
+<style>
+.recttit {
+    font-size: 24px;
+    color: #fd584d;
+    padding: 76px 0 40px;
+    background: url(http://mat.niutou.com/mat/niutouweb/images/number.png) no-repeat;
+}
+.rectcon {
+    line-height: 30px;
+    color: #919191;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.rectwrap {
+    position: relative;
+    margin-bottom: 116px;
+}
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+.rectwrap.imgarea{
+    display:none;
+
+}
+.fl{
+    float:left;
+}
+.rectwrap img {
+    display: block;
+}
+.rectwrap .rect {
+    float: none;
+    width: 640px;
+    margin: auto;
+}
+.rect {
+    width: 590px;
+    height: 300px;
+    padding: 0 40px;
+    background: #fff;
+}
+
+.recttit2 {
+    padding-left: 50px;
+    background-position: 0 -94px;
+}
+
+.recttit i.floor {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-family: Arial;
+    background: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 2px solid #3ae0ab;
+    color: #66B3FF;
+    font-style: normal;
+    font-size: 18px;
+}
+.rect.fl{
+    float:right;
+}
+.footer{
+    background-color: #EEEEEE;
+    
+}
+.c11{
+    font-size: 22px;
+}
+.footic01{
+    margin-left: 60px;
+}
+.footic02{
+    margin-left: 90px;
+}
+.footic03{
+    margin-left: 90px;
+}

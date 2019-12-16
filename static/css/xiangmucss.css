@@ -1,0 +1,178 @@
+
+
+a{
+    text-decoration: none;
+}
+.header_box1{ width:100%;
+             height:116px;
+			 background:#fefefe;
+             position:absolute;
+			 left:0;
+			 top:0;
+			 box-shadow:0px 4px 14px #666;
+			 z-index:600; }		
+
+/*.header_box2{ width:1200px;  
+			  margin:0 auto;}*/
+.logo_box img{ border-radius: 50%;
+    width: 100px;
+    height: 100px;}			
+.nam{
+    margin-left: 140px;
+    margin-top: -98px;
+}
+.menu{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    right:-400px;
+    top:-70px;
+}
+.menu span {
+    display: inline-block;
+    margin: 0px 15px;
+    font-size: 16px;
+    color: #4f4f4f;
+}
+.menu img{
+	position: absolute;
+    right: 10px;
+    top: -8px;
+    cursor: pointer;
+}
+body a {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+.menu{
+    width: 1180px;
+    height: 80px;
+    text-align: left;
+    margin: 0px auto;
+}
+
+button.white {
+    background: #fcfcfc;
+    color: #3fa9f5;
+    border: 1px #3fa9f5 solid;
+}
+button.blue {
+    background: #3fa9f5;
+    color: #ffffff;
+    border: 1px #3fa9f5 solid;
+}
+.c11{
+    margin-top: 200px;
+}
+
+.col-sm-3.col-lg-2.sidebar{
+    background-color: #EEEEEE;
+    width:220px;
+    float:left;
+}
+.text-center {
+    text-align: center;
+}
+.bbottom {
+    border-bottom: 1px solid #ddd;
+}
+.padding15 {
+    padding: 15px;
+}
+a {
+    color: #333;
+    text-decoration: none;
+    font-family: Microsoft Yahei;
+}
+.member_pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 4px solid #fff;
+    box-shadow: -1px -2px 2px rgba(0,0,0,.08);
+}
+.blue {
+    color: #288bd7;
+}
+.nav.nav-sidebar{
+    border-bottom: 2px solid #ddd;
+}
+ul, li {
+    list-style: none outside none;
+    background-color: #EEEEEE;
+    text-align: center;
+}
+ul li.active{
+    
+    color: #000;
+    font-weight: bold;
+    background: #fff;
+    display: block;
+    margin: 0px auto;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    height: 50px;
+}
+ul li a{
+    display: block;
+    margin: 0px auto;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+    height: 50px;
+    background: url(../images/2015ucenter/jt.png) no-repeat right;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.f-title {
+    color: #666;
+    margin-bottom: 5px;
+}
+.f-title a {
+    color: #3e81c7;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    font-weight: bold;
+}
+.gray {
+    color: #A5A5A5;
+}
+.fr{
+    margin-left: 300px;}
+.mt30.text-center.mb20{
+    margin-left: 160px;
+    margin-top: 20px;
+}
+
+.q1{
+    background: #f9fdff;
+    height:50px;
+    margin-left: -380px;
+    margin-top: 20px;
+}
+.m-orders-list-t.mt20{
+    font-size: 18px;
+   
+}
+.footer{
+    background-color: #EEEEEE;
+    
+}
+.c12{
+    font-size: 22px;
+}
+.footic01{
+    margin-left: 60px;
+}
+.footic02{
+    margin-left: 90px;
+}
+.footic03{
+    margin-left: 90px;
+}

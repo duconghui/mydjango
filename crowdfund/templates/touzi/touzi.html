@@ -1,0 +1,172 @@
+
+{% load static %}
+{% block title %}touzi{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/touzicss.css' %}">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+{% endblock %}
+{% block content %}
+	<div class="container">
+
+		<!-- head -->
+		<div class="header_box1">
+            <div class="header_box2">
+                <a class="logo_box" href="{% url 'crowdfund:index' %}"><img src="{% static 'images/7.jpg' %}"/></a>
+            <div class="nam">
+                <h1>众筹之光</h1>
+                <p>www.zhongchouzhiguang.com</p>
+            </div>
+            </div>
+    <!-- menu -->
+            <div class="menu">
+                <span><a href="{% url 'crowdfund:thefirst' %}">首页</a></span>
+                <span><a href="{% url 'crowdfund:search' %}">优质项目</a></span>
+                <span><a href="{% url 'crowdfund:add' %}">发起众筹</a></span>
+                <span><a href="{% url 'crowdfund:guide' %}">新手指南</a></span>
+                <span><a href="{% url 'crowdfund:myself' %}">个人中心</a></span>
+                <span style="position: relative; margin-left:40px;">
+                <form method="get" action="/search/">
+                    {% csrf_token %}
+                    <input type="search" placeholder="搜索" required>
+                    <button type="submit">搜索</button>
+                </form>
+                </span>
+           <!-- 登录注册按钮 -->
+           <div class="btns" style="margin-left: 800px;margin-top:-20px;">
+
+              <a href="{% url 'crowdfund:login' %}"><button class="white small" style="">登录</button></a>
+
+              <a href="{% url 'crowdfund:register' %}"><button class="blue small ml20 mr20">注册</button></a>
+           </div>
+           </div>
+    <!-- munu end -->
+    </div>
+<!-- head end -->
+<div class="c11" style="border:2px solid #a1a1a1; ">
+<div class="c">
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" >
+    <div class="text-center padding15 bbottom" style="background-color: #EEEEEE;">
+       <form>
+            <!----用一个label标签将上传文件输入框跟图片绑定一起---->
+            <label>
+                <img id="avatar-img" src="{% static 'images/7.jpg' %}" width="80px" height="80px">
+                <div style="display:none">头像<input id="avatar-input" hidden type="file"></div>
+            </label>
+        </form>
+    </div>
+    <ul class="nav nav-sidebar">
+      <li><a href="{% url 'crowdfund:myself' %}"><span class="glyphicon glyphicon-dashboard"></span> 资料管理</a></li>
+      <li><a href="{% url 'crowdfund:xiangmu' %}"><span class="glyphicon glyphicon-th"></span> 项目管理</a></li>
+      <li class="active"><a href="{% url 'crowdfund:touzi' %}"><span class="glyphicon glyphicon-stats"></span> 投资管理</a></li>
+      <li><a href="{% url 'crowdfund:xiaoxi' %}"><span class="glyphicon glyphicon-list-alt"></span> 消息中心</a></li>
+      <li><a href="{% url 'crowdfund:help' %}"><span class="glyphicon glyphicon-pencil"></span> 帮助中心</a></li>
+      <li role="presentation" class="divider"></li>
+      <li><a href="{% url 'crowdfund:login' %}"><span class="glyphicon glyphicon-user"></span> Login Page</a></li>
+    </ul>
+
+  </div><!--/.sidebar-->
+
+  <div class="fr w860 padding40" style="height:800px;">
+        <div class="panel" style="width: 100%;">
+            <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>支出</th>
+                            <th>收入</th>
+                            <th>余额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for investor in all_investor %}
+                             <tr>
+                                 <td>{{ investor.expenditure }}</td>
+                                 <td>{{ invertor.recharge }}</td>
+                                 <td>{{ invertor.disposable_funds }}</td>
+                             </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+        </div>
+      </div>
+      <!-- 投资案例 end -->
+</p>
+</p></div>
+    </div>
+    <!-- footer -->
+  </br>
+<div class="footer">
+  <div class="c12">
+  </br>
+    <a href="#" class="footic01">众筹之家-打造专业众筹平台</a>
+      <a href="#" class="footic02">全球众筹金融科技服务平台</a>
+      <a href="#" class="footic03">造就百亿市值公司</a>
+  </div>
+
+  <div class="row" >
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>关于我们</h5>
+      <h6><a href="#" >公司简介</a></h6>
+      <h6><a href="#">股东成员</a></h6>
+      <h6><a href="#">发展历程</a></h6>
+      <h6><a href="#">媒体报道</a></h6>
+      <h6><a href="#">联系我们</a></h6>
+    </div>
+
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>帮助中心</h5>
+      <h6><a href="{% url 'crowdfund:guide' %}">新手指南</a></h6>
+      <h6><a href="#">什么是众投？</a></h6>
+    </div>
+
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>投资指南</h5>
+      <h6><a href="#">领投介绍</a></h6>
+      <h6><a href="#">跟投介绍</a></h6>
+      <h6><a href="#">众投投资流程</a></h6>
+    </div>
+
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>客服热线</h5>
+      <h6><a href="#">111-222-3333</a></h6>
+      <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+      <h6><a href="#">在线反馈</a></h6>
+      <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+    </div>
+
+  </div>
+
+  <div class="world" style="text-align: center;color: #6e6e6e;">
+      <p >以上项目信息来自于基金公司、资管公司、基金子公司、创业公司等提供给众筹之家的信息资料，基金公司、资管公司、基金子公司、创业公司等对其提供信息的真实可靠性和完整准确性负责。投资者应仔细阅读理财产品的法律文件，了解项目风险和收益特征（包括系统性风险和特定产品所特有的投资风险等）。投资者应根据自身资产状况、风险承受能力选择适合自己的股权投资产品。众筹之家提供的宣传推介材料仅供投资者参考，不构成众筹之家的任何推荐或投资建议。投资者应审慎决策、独立承担风险。</p>
+  </div>
+
+  <div class="c1160" style="text-align: center;">
+      <a href="#">关于我们</a><span class="sep">|</span>
+      <a href="#">加入我们</a><span class="sep">|</span>
+      <a href="#">我要融资</a><span class="sep">|</span>
+      <a href="#">在线反馈</a><span class="sep">|</span>
+      <a href="#">用户注册协议</a><span class="sep">|</span>
+      <a href="#">帮助中心</a><span class="sep">|</span>
+      <a href="#">免责声明</a><span class="sep">|</span>
+      <a href="#">隐私权声明</a>
+ </div>
+</div>
+
+</div>
+<!-- container end -->
+{% endblock %}
+<script>
+    // 上传文件按钮（label里的图片）点击事件
+    $('#avatar-input').on('change',function () {
+        // 获取用户最后一次选择的图片
+        var choose_file=$(this)[0].files[0];
+        // 创建一个新的FileReader对象，用来读取文件信息
+        var reader=new FileReader();
+        // 读取用户上传的图片的路径
+        reader.readAsDataURL(choose_file);
+        // 读取完毕之后，将图片的src属性修改成用户上传的图片的本地路径
+        reader.onload=function () {
+             $("#avatar-img").attr("src",reader.result)
+        }
+    });
+</script>

@@ -1,0 +1,90 @@
+
+{% load static %}
+{% block title %}login{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/logincss.css' %}">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+{% block content %}
+	<div class="container">
+		 <!-- <IFRAME NAME="content_frame" width=100% height=120 marginwidth=0 marginheight=0 SRC="head.html" ></IFRAME>  -->
+		<!-- head -->
+        <div class="header_box1">
+    <div class="header_box2">
+         <a class="logo_box" href="{% url 'crowdfund:index' %}"><img src="{% static 'images/7.jpg' %}"/></a>
+         <div class="nam">
+            <h1>众筹之光</h1>
+            <p>www.zhongchouzhiguang.com</p>
+        </div>
+    </div>
+    <!-- menu -->
+    <div class="menu">
+        <span><a href="{% url 'crowdfund:thefirst' %}">首页</a></span>
+        <span><a href="{% url 'crowdfund:search' %}">优质项目</a></span>
+        <span><a href="{% url 'crowdfund:add' %}">发起众筹</a></span>
+        <span><a href="{% url 'crowdfund:guide' %}">新手指南</a></span>
+        <span><a href="{% url 'crowdfund:myself' %}">个人中心</a></span>
+        <span style="position: relative; margin-left:40px;">
+        <form method="get" action="/search/">
+            {% csrf_token %}
+            <input type="search" placeholder="搜索" required>
+            <button type="submit">搜索</button>
+        </form>
+        </span>
+
+        <!-- 登录注册按钮 -->
+       <div class="btns" style="margin-left: 800px;margin-top:-40px;">
+
+       <a href="{% url 'crowdfund:login' %}"><button class="white small" style="">登录</button></a>
+
+        <a href="{% url 'crowdfund:register' %}"><button class="blue small ml20 mr20">注册</button></a>
+       </div>
+    </div>
+    <!-- munu end -->
+
+
+</div>
+        <!-- head end -->
+        <main>
+            <div class="main">
+                <form class="form-login" action="/login/" method="post">
+
+                    <!--提示-->
+                    {% if message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                    {% endif %}
+
+                    {% csrf_token %}
+                    <br>
+                    <p style="color:#66B3FF;">用户登录</p>
+                    <br>
+                     <span class="glyphicon glyphicon-user" style="position:absolute;padding-top:90px;"></span>
+                         <div class="form-group" style="width=30px;margin-left:80px;">
+                         {{ login_form.userName}}
+                         </div>
+                    <br>
+                    <span class="glyphicon glyphicon-lock" style="position:absolute;padding-top:150px;"></span>
+                    <div class="form-group" style="width=30px;margin-left:80px;">
+                         {{ login_form.userPwd }}
+                     </div>
+                    <br>
+                    <div class="form-group" >
+                         {{ login_form.captcha.errors }}
+                         {{ login_form.captcha }}
+                    </div>
+
+                    <input type="submit" value="登陆" style="background:#66B3FF;width:200px;height:36px;margin-left: 90px;
+    border-radius: 10px;"/>
+                    <p id="info"></p>
+                    <a href="{% url 'crowdfund:register' %}" target="_blank" style="margin-top:20px;">没有账号？立即注册</a>
+                </form>
+            </div>
+        </main>
+
+        <!--
+     <script type="text/javascript" src="../js/login_check.js"></script>
+     -->
+	</div>
+{% endblock %}

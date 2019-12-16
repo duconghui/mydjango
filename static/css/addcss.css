@@ -1,0 +1,169 @@
+
+
+a{
+    text-decoration: none;
+}
+.header_box1{ width:100%;
+             height:116px;
+			 background:#fefefe;
+             position:absolute;
+			 left:0;
+			 top:0;
+			 box-shadow:0px 4px 14px #666;
+			 z-index:600; }		
+
+/*.header_box2{ width:1200px;  
+			  margin:0 auto;}*/
+.logo_box img{ border-radius: 50%;
+    width: 100px;
+    height: 100px;}			
+.nam{
+    margin-left: 140px;
+    margin-top: -100px;
+}
+.menu{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    right:-400px;
+    top:-70px;
+}
+.menu span {
+    display: inline-block;
+    margin: 0px 15px;
+    font-size: 16px;
+    color: #4f4f4f;
+}
+.menu img{
+	position: absolute;
+    right: 10px;
+    top: -8px;
+    cursor: pointer;
+}
+body a {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+.menu{
+    width: 1180px;
+    height: 80px;
+    text-align: left;
+    margin: 0px auto;
+}
+
+button.white {
+    background: #fcfcfc;
+    color: #3fa9f5;
+    border: 1px #3fa9f5 solid;
+}
+button.blue {
+    background: #3fa9f5;
+    color: #ffffff;
+    border: 1px #3fa9f5 solid;
+}
+/*head end*/
+.c {
+    width: 1160px;
+    margin: 0 auto;
+    margin-top: 150px;
+    border:2px solid #a1a1a1;
+
+}
+.bgfff {
+    background: #fafafa;
+    height:900px;
+}
+.e2 {
+    text-align: center;
+    font-size: 22px;
+    border-top: none;
+    border-bottom: 1px solid #dddddd;
+    line-height: 65px;
+    height: 65px;
+    background: #fafafa;
+    color: #ED5E58;
+}
+.edit-nav-active {
+    background: #fff;
+    border-right: 1px solid #dddddd;
+    line-height: 66px;
+    height: 66px;
+    border-bottom: 1px solid #fff;
+    width: 250px;
+    float: left;
+}
+.edit div {
+    text-align: left;
+    padding: 5px 30px;
+    color: #3b3b3b;
+    line-height: 25px;
+    margin: 10px 0px;
+}
+.edit div span {
+    float: left;
+    padding-right: 10px;
+    text-align: right;
+    width: 130px;
+    line-height: 24px;
+}
+.in_hover {
+    border: 1px solid #CCCCCC;
+}
+.red {
+    color: #ee4f50;
+}
+.editlogo img {
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+}
+.tishi{
+    position: absolute;
+    
+}
+.gray {
+    color: #A5A5A5;
+}
+.btn-orange {
+    background: #66B3FF;
+}
+.btn-lg {
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 10px 16px;
+}
+.btn {
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    color: #fff;
+    font-family: Microsoft Yahei;
+    padding: 0px 10px;
+    border: none;
+    border-radius: 3px;
+}
+.text-center.padding15{
+    margin-top: 180px;
+}
+/*footer*/
+.footer{
+    background-color: #EEEEEE;
+
+}
+.c11{
+    font-size: 22px;
+}
+.footic01{
+    margin-left: 60px;
+}
+.footic02{
+    margin-left: 90px;
+}
+.footic03{
+    margin-left: 90px;
+}

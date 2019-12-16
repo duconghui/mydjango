@@ -1,0 +1,121 @@
+body {
+	background-image:url('../images/banner1.jpg');
+
+}
+
+ 
+
+a{
+    text-decoration: none;
+}
+.header_box1{ width:100%;
+             height:116px;
+             background:#fefefe;
+             position:absolute;
+             left:0;
+             top:0;
+             box-shadow:0px 4px 14px #666;
+             z-index:600; }     
+
+/*.header_box2{ width:1200px;  
+              margin:0 auto;}*/
+.logo_box img{ border-radius: 50%;
+    width: 100px;
+    height: 100px;}         
+.nam{
+    margin-left: 140px;
+    margin-top: -95px;
+}
+.menu{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    right:-400px;
+    top:-70px;
+}
+.menu span {
+    display: inline-block;
+    margin: 0px 15px;
+    font-size: 16px;
+    color: #4f4f4f;
+}
+.menu img{
+    position: absolute;
+    right: 10px;
+    top: -8px;
+    cursor: pointer;
+}
+body a {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+.menu{
+    width: 1180px;
+    height: 80px;
+    text-align: left;
+    margin: 0px auto;
+}
+/*.btns {
+    float: right;
+    margin-top:-70px;
+    margin-right: 80px;
+}*/
+button.white {
+    background: #fcfcfc;
+    color: #3fa9f5;
+    border: 1px #3fa9f5 solid;
+}
+button.blue {
+    background: #3fa9f5;
+    color: #ffffff;
+    border: 1px #3fa9f5 solid;
+}
+.main{
+    background-color: white;
+    opacity:0.85;
+    border-radius: 25px;
+    height:500px;
+    width:1000px;
+    margin-top:160px;
+    margin-left:80px;
+}
+.p1 p{
+    font-size: 26px;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+.reg-box {
+    position: relative;
+    padding-left: 130px;
+
+   }
+.reg-box .item {
+    height:68px;
+   /* line-height:34px;*/
+    position: relative;
+    z-index:5;}
+
+.reg-box .intelligent-label {
+    width:100px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    padding-right: 10px;
+}
+
+.reg-box .intelligent-label b{
+    font-family: "????";
+    margin-right: 5px;
+    font-weight: normal; 
+    color:red;}
+.f-fl{
+    float:left! important;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,206 @@
+
+{% load static %}
+{% block title %}guide{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/guidecss.css' %}">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+	<div class="container">
+   <div class="header_box1">
+    <div class="header_box2">
+         <a class="logo_box" href="{% url 'crowdfund:index' %}"><img src="{% static 'images/7.jpg' %}"/></a>
+         <div class="nam">
+            <h1>众筹之光</h1>
+            <p>www.zhongchouzhiguang.com</p>
+        </div>
+    </div>
+    <!-- menu -->
+    <div class="menu">
+        <span><a href="{% url 'crowdfund:thefirst' %}">首页</a></span>
+        <span><a href="{% url 'crowdfund:search' %}">优质项目</a></span>
+        <span><a href="{% url 'crowdfund:add' %}">发起众筹</a></span>
+        <span><a href="{% url 'crowdfund:guide' %}">新手指南</a></span>
+        <span><a href="{% url 'crowdfund:myself' %}">个人中心</a></span>
+        <span style="position: relative; margin-left:40px;">
+        <form method="get" action="/search/">
+            {% csrf_token %}
+            <input type="search" placeholder="搜索" required>
+            <button type="submit">搜索</button>
+        </form>
+        </span>
+        <!-- 登录注册按钮 -->
+    <div class="btns" style="margin-left: 800px;margin-top:-40px;">
+
+       <a href="{% url 'crowdfund:login' %}"><button class="white small" style="">登录</button></a>
+
+        <a href="{% url 'crowdfund:register' %}"><button class="blue small ml20 mr20">注册</button></a>
+    </div>
+    </div>
+    <!-- munu end -->
+</div><!-- head end -->
+     <div class="birdmain" style="background: #EEEEEE;border:2px solid #a1a1a1;">
+     	<div class="w1180 forbg" style=" ">
+     	  <div class="realize w290" >
+     	  	怎样在众筹之光平台上投资
+     	  </div>
+     	  <!-- 第一步 -->
+     	  <div class="rect1">
+     	  </br>
+     	</br>
+     </br>
+     	    <div class="recttit recttit1">
+     	    	<i class="floor">&emsp;1&emsp;
+     	    	</i>
+     	    	<h4>申请成为认证投资人 </h4>
+
+
+     	    </div>
+     	    <div class="rectcon" >
+     	      通过众筹之光认证投资人入口，如实填写认证投资人相关信息 并提交，审核通过后即成为平台认可的投资人。
+     	    </div>
+     	  </div>
+     	  <!-- 第一步end -->
+
+     	  <!-- 第二步 -->
+     	  <div class="rectwrap cf">
+     	  	<div class="imgarea fl" >
+     	  		<img src="{% static 'images/gy1.jpg' %}" alt="" style="height:300px;">
+     	  	</div>
+     	  	<div class="rect fl" style="width:600px;">
+     	  	</br>
+     	  </br>
+     	  <div class="recttit recttit1"style="margin-left: 200px;">
+     	    	<i class="floor" >&emsp;2&emsp;
+     	    	</i>
+     	    	<h4>浏览项目 </h4>
+     	    </div>
+     	    <div class="rectcon" >
+     	      投资人浏览平台上融资中的融资项目，详细了解融资项目信息，按照平台设定的项目规则（如投资份额限制等）选择拟投资的融资项目。投资人确认充分了解拟投资的融资项目之风险，并确认其具备相应的风险认知和承受能力。
+     	    </div>
+     	  	</div>
+     	  </div>
+     	  <!-- 第二步end -->
+     	  <!-- 第三步 -->
+     	  <div class="rectwrap cf">
+     	  	<div class="imgarea fr" style="padding-top: 20px;">
+     	  		<img src="{% static 'images/gy2.jpg' %}" alt="" style="height:300px;float:right;margin-top: 80px;">
+     	  	</div>
+     	  	<div class="rect fl" style="width:600px;float:left;margin-top: 80px;">
+     	  		</br>
+     	</br>
+     </br>
+     	  		<div class="recttit recttit1" style="margin-left: 200px;">
+     	    	   <i class="floor" >&emsp;3&emsp;</i>
+     	    	   <h4>众筹之光直接认购 </h4>
+     	    	</div>
+     	        <div class="rectcon" >
+     	          项目处于预热中时，投资人获取平台发放的编码，提交认购订单；项目开启融资后，投资人直接通过认购通道提交订单。
+     	        </div>
+
+     	  	</div>
+     	  </div>
+     	  <!-- 第三步end -->
+
+     	  <!-- 第四步 -->
+     	  <div class="rectwrap cf">
+     	  	<div class="imgarea fl">
+     	  		<img src="{% static 'images/gy3.jpg' %}" alt="" style="height:300px;float:left;margin-top: 80px;">
+     	  	</div>
+     	  	<div class="rect fl" style="width:600px;float:right;margin-top: 80px;">
+     	  		</br>
+
+     	  		<div class="recttit recttit1" style="margin-left: 200px;">
+     	    	   <i class="floor" >&emsp;4&emsp;</i>
+     	    	   <h4>支付投资金额  </h4>
+     	    	</div>
+     	        <div class="rectcon" >
+     	          投资人将投资款项支付至平台指定的账户中。平台内所有的融资项目均按照先投先得的规则进行投资，先后顺序以投资款项到达平台指定的账户的时间为准。项目投资人一旦决定参与项目投资，则视为其已经充分了解其中风险所在，并需在融资金额筹集有效时间内将投资款划支付至平台指定的账户，投资人完成支付后除非融资项目融资失败，或融资成功后得到融资人书面同意，否则无法申请投资款退回。
+     	        </div>
+
+     	  	</div>
+
+     	  </div>
+     	  <!-- 第四步end -->
+
+     	  <!-- 第五步 -->
+     	  <div class="rectwrap last cf">
+     	  	<div class="imgarea fr">
+     	  		<img src="{% static 'images/gy4.jpg' %}" alt="" style="height:300px;float:right;margin-top: 80px;">
+     	  	</div>
+     	  	<div class="rect fl" style="width:600px;float:left;margin-top: 80px;">
+     	  	</br>
+     	  </br>
+     	  		<div class="recttit recttit1" style="margin-left: 200px;">
+     	    	   <i class="floor" >&emsp;5&emsp;</i>
+     	    	   <h4>融资成功  </h4>
+     	    	</div>
+     	        <div class="rectcon" >
+     	          融资项目原则上具有明确的融资金额目标与融资时间。在融资时间内，达到或超过融资金额目标，则视为融资成功，如果在融资时间内，没有达到融资目标，则视为融资失败，平台会将投资人已支付的投资款直接无息还给投资人（原则上仅支持原支付路径退还）。
+     	        </div>
+
+     	  	</div>
+     	  </div>
+
+     	</div>
+
+     </div> </br>
+     <div class="footer">
+  <div class="c11">
+  </br>
+    <a href="#" class="footic01">众筹之光-打造专业众筹平台</a>
+      <a href="#" class="footic02">全球众筹金融科技服务平台</a>
+      <a href="#" class="footic03">造就百亿市值公司</a>
+  </div>
+
+  <div class="row" >
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>关于我们</h5>
+      <h6><a href="#" >公司简介</a></h6>
+      <h6><a href="#">股东成员</a></h6>
+      <h6><a href="#">发展历程</a></h6>
+      <h6><a href="#">媒体报道</a></h6>
+      <h6><a href="#">联系我们</a></h6>
+    </div>
+
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>帮助中心</h5>
+      <h6><a href="{% url 'crowdfund:guide' %}">新手指南</a></h6>
+      <h6><a href="#">什么是众投？</a></h6>
+    </div>
+
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>投资指南</h5>
+      <h6><a href="#">领投介绍</a></h6>
+      <h6><a href="#">跟投介绍</a></h6>
+      <h6><a href="#">众投投资流程</a></h6>
+    </div>
+
+    <div class="col-lg-3" style="text-align: center;">
+      <h5>客服热线</h5>
+      <h6><a href="#">111-222-3333</a></h6>
+      <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+      <h6><a href="#">在线反馈</a></h6>
+      <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+    </div>
+
+  </div>
+
+  <div class="world" style="text-align: center;color: #6e6e6e;">
+      <p >以上项目信息来自于基金公司、资管公司、基金子公司、创业公司等提供给众筹之光的信息资料，基金公司、资管公司、基金子公司、创业公司等对其提供信息的真实可靠性和完整准确性负责。投资者应仔细阅读理财产品的法律文件，了解项目风险和收益特征（包括系统性风险和特定产品所特有的投资风险等）。投资者应根据自身资产状况、风险承受能力选择适合自己的股权投资产品。众筹之光提供的宣传推介材料仅供投资者参考，不构成众筹之光的任何推荐或投资建议。投资者应审慎决策、独立承担风险。</p>
+  </div>
+
+  <div class="c1160" style="text-align: center;">
+      <a href="#">关于我们</a><span class="sep">|</span>
+      <a href="#">加入我们</a><span class="sep">|</span>
+      <a href="#">我要融资</a><span class="sep">|</span>
+      <a href="#">在线反馈</a><span class="sep">|</span>
+      <a href="#">用户注册协议</a><span class="sep">|</span>
+      <a href="#">帮助中心</a><span class="sep">|</span>
+      <a href="#">免责声明</a><span class="sep">|</span>
+      <a href="#">隐私权声明</a>
+ </div>
+</div>
+
+</div><!-- container end -->
+{% endblock %}

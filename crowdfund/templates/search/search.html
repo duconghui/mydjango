@@ -1,0 +1,259 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/searchcss.css' %}">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <title>search</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="header_box1">
+        <div class="header_box2">
+            <a class="logo_box" href="{% url 'crowdfund:index' %}"><img src="{% static 'images/7.jpg' %}"/></a>
+            <div class="nam">
+                <h1>众筹之光</h1>
+                <p>www.zhongchouzhiguang.com</p>
+            </div>
+        </div>
+        <div class="menu">
+            <span><a href="{% url 'crowdfund:thefirst' %}">首页</a></span>
+            <span><a href="{% url 'crowdfund:search' %}">优质项目</a></span>
+            <span><a href="{% url 'crowdfund:add' %}">发起众筹</a></span>
+            <span><a href="{% url 'crowdfund:guide' %}">新手指南</a></span>
+            <span><a href="{% url 'crowdfund:myself' %}">个人中心</a></span>
+            <span style="position: relative; margin-left:40px;">
+                <form method="get" action="/search/">
+                    {% csrf_token %}
+                    <input type="search" placeholder="搜索" required>
+                    <button type="submit">搜索</button>
+                </form>
+            </span>
+            <div class="btns" style="margin-left: 800px;margin-top:-40px;">
+                <a href="{% url 'crowdfund:login' %}"><button class="white small" style="">登录</button></a>
+                <a href="{% url 'crowdfund:register' %}"><button class="blue small ml20 mr20">注册</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="crumbs">
+        <a href="#">首页</a> &nbsp;&gt;&nbsp;
+        <span class="crumbs-level" id="crumbsLevel"><a href="#">优质项目</a> -&gt; 筛选</span>
+    </div>
+    <div class="product-list-main" style="height:300px;margin-top:20px;border: 1px solid #efefef;margin-bottom: 50px;">
+        <ul class="product-list-wrap" id="ul_select" style="overflow:visible">
+            <li class="select-result">
+                <dl id="dl_result" class="clearfix">
+                    <dd class="select-no"></dd>
+                    <dt><span id="clearAll">清空筛选</span></dt>
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select1" class="dl clearfix">
+                    <dt style="font-size:16px;float:left;height:50px; margin-top:40px;">项目类型：</dt>
+                    <div class="fl" style="width:200px;margin-top:-45px;margin-left:100px;">
+                        <dd><span class="curr" style="margin: 0 5px 5px 0;padding: 5px 10px;">全部</span></dd>
+                        <dd><span style="margin-left:120px;position:absolute;margin-top:-20px;">融资项目</span></dd>
+                        <dd><span style="margin-left:240px;position:absolute;margin-top:-20px;">领投基金</span></dd>
+                        <dd><span style="margin-left:360px;position:absolute;margin-top:-20px;">会员项目</span></dd>
+                    </div>
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select2" class="dl clearfix">
+                    <dt style="font-size:16px;float:left;height:50px; margin-top:100px; margin-left:-100px;">项目阶段：</dt>
+                    <div class="fl" style="margin-top:100px;">
+                        <dd><span class="curr" style="margin: 0 5px 5px 0;padding: 5px 10px;">全部</span></dd>
+                        <dd><span style="margin-left:120px;position:absolute;margin-top:-20px;">种子期</span></dd>
+                        <dd><span style="margin-left:240px;position:absolute;margin-top:-20px;">成长期</span></dd>
+                        <dd><span style="margin-left:360px;position:absolute;margin-top:-20px;">扩张期</span></dd>
+                        <dd><span style="margin-left:480px;position:absolute;margin-top:-20px;">成熟期</span></dd>
+                    </div>
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select3" class="dl clearfix">
+                    <dt style="font-size:16px;float:left;height:50px; margin-top:160px;margin-left:-200px; ">行业分类：</dt>
+                    <div class="fl" style="margin-top:160px;margin-left:-100px;">
+                        <dd><span class="curr" style="margin: 0 5px 5px 0;padding: 5px 10px;">全部</span></dd>
+                        <dd><span style="margin-left:120px;position:absolute;margin-top:-20px;">移动互联</span></dd>
+                        <dd><span style="margin-left:240px;position:absolute;margin-top:-20px;">节能环保</span></dd>
+                        <dd><span style="margin-left:360px;position:absolute;margin-top:-20px;">文化传媒</span></dd>
+                        <dd><span style="margin-left:480px;position:absolute;margin-top:-20px;">新能源</span></dd>
+                        <dd><span style="margin-left:600px;position:absolute;margin-top:-20px;">消费服务</span></dd>
+                        <dd><span style="margin-left:720px;position:absolute;margin-top:-20px;">其他</span></dd>
+                    </div>
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select4" class="dl clearfix">
+                    <dt style="font-size:16px;float:left;height:50px; margin-top:220px; margin-left:-300px;">所在地区：</dt>
+                    <div class="fl" style="margin-top:220px;margin-left:-200px;">
+                        <dd><span href="#" class="curr" style="margin: 0 5px 5px 0;padding: 5px 10px;">全部</span></dd>
+                        <dd><a href="{% url 'crowdfund:choose' %}" style="margin-left:120px;position:absolute;margin-top:-25px;">北京</a></dd>
+                        <dd><a href="#" style="margin-left:200px;position:absolute;margin-top:-25px;">天津</a></dd>
+                        <dd><a href="#" style="margin-left:280px;position:absolute;margin-top:-25px;">浙江</a></dd>
+                        <dd><a href="#" style="margin-left:360px;position:absolute;margin-top:-25px;">上海</a></dd>
+                        <dd><a href="#" style="margin-left:440px;position:absolute;margin-top:-25px;">福建</a></dd>
+                        <dd><a href="#" style="margin-left:520px;position:absolute;margin-top:-25px;">湖北</a></dd>
+                        <dd><a href="#" style="margin-left:600px;position:absolute;margin-top:-25px;">其他</a></dd>
+                    </div>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 文字轮播 -->
+<div class="word">
+    <p>最新商品投资实时播报：</p>
+    <marquee  behavior="scroll" direction="up" height="50" οnmοuseοver=this.stop() οnmοuseοut=this.start() scrollamount=3 style="margin-left:200px;margin-top: 0px;">
+        <span style="color:#000000;">会员s***z投资了西安瑶兰城市民宿</span><br/>
+        <span style="color: #000000;">会员s***f投资了颜值派唐山远洋城店（二期）</span></br>
+        <span style="color: #000000;">会员s***a投资了唱吧麦颂KTV北京百子湾店二期</span>
+    </marquee>
+</div>
+<div class="container marketing">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-3">
+            <a href="#"><img class="img-circle" src="{% static 'images/r1.jpg' %}"  width="200" height="200"></a>
+            <h5>月府新曲线东莞国贸城店</h5>
+            <p class="text-info">首家整店托管产后恢复管理公司-提供项目服务、产品输出、店铺托管等整店输出方案以后塑身以市场入口，构建整体产后恢复服务门店
+            </p>
+            <p class="num-of-person">支持人数：29</p>
+            <p class="f16 c999 money-collect-wrap clearfix">
+                <span class="fl">已筹</span><span class="collect-money fl">&yen;62000</span>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img class="img-circle" src="{% static 'images/r2.jpg' %}"  width="200" height="200"></a>
+            <h5>济南CCWORK（西沃空间）四期</h5>
+            <p class="text-info">店铺优势：装修设计前沿，服务理念先进，客户稳定
+            </p>
+            <p class="num-of-person">支持人数：130</p>
+            <p class="f16 c999 money-collect-wrap clearfix">
+                <span class="fl">已筹</span><span class="collect-money fl">&yen;26000</span>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img class="img-circle" src="{% static 'images/r3.jpg' %}"  width="200" height="200"></a>
+            <h5>超级马力松原郭家加油站</h5>
+            <p class="text-info">加油站中的“蛋壳公寓模式”；十年租期，续租亦持续分红；两年回本，年回报率不低50%
+            </p>
+            <p class="num-of-person">支持人数：58</p>
+            <p class="f16 c999 money-collect-wrap clearfix">
+                <span class="fl">已筹</span><span class="collect-money fl">&yen;3454400</span>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img class="img-circle" src="{% static 'images/r4.jpg' %}"  width="200" height="200"></a>
+            <h5>宽饭 北京马甸店</h5>
+            <p class="text-info">宽饭由宽饭餐饮及味妙餐饮联合打造，创始核心由从事餐饮、营养及空间设计的专业人士组成。
+            </p>
+            <p class="num-of-person">支持人数：8</p>
+            <p class="f16 c999 money-collect-wrap clearfix">
+                <span class="fl">已筹</span><span class="collect-money fl">&yen;90000</span>
+            </p>
+        </div>
+    </div><!-- /.row -->
+    <hr/>
+</div><!-- /.container -->
+<div class="footer">
+    <div class="c11">
+        </br>
+        <a href="#" class="footic01">众筹之光-打造专业众筹平台</a>
+        <a href="#" class="footic02">全球众筹金融科技服务平台</a>
+        <a href="#" class="footic03">造就百亿市值公司</a>
+    </div>
+    <div class="row" >
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>关于我们</h5>
+            <h6><a href="#" >公司简介</a></h6>
+            <h6><a href="#">股东成员</a></h6>
+            <h6><a href="#">发展历程</a></h6>
+            <h6><a href="#">媒体报道</a></h6>
+            <h6><a href="#">联系我们</a></h6>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>帮助中心</h5>
+            <h6><a href="{% url 'crowdfund:guide' %}">新手指南</a></h6>
+            <h6><a href="#">什么是众投？</a></h6>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>投资指南</h5>
+            <h6><a href="#">领投介绍</a></h6>
+            <h6><a href="#">跟投介绍</a></h6>
+            <h6><a href="#">众投投资流程</a></h6>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>客服热线</h5>
+            <h6><a href="#">111-222-3333</a></h6>
+            <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+            <h6><a href="#">在线反馈</a></h6>
+            <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+        </div>
+    </div>
+    <div class="world" style="text-align: center;color: #6e6e6e;">
+        <p >以上项目信息来自于基金公司、资管公司、基金子公司、创业公司等提供给众筹之光的信息资料，基金公司、资管公司、基金子公司、创业公司等对其提供信息的真实可靠性和完整准确性负责。投资者应仔细阅读理财产品的法律文件，了解项目风险和收益特征（包括系统性风险和特定产品所特有的投资风险等）。投资者应根据自身资产状况、风险承受能力选择适合自己的股权投资产品。众筹之光提供的宣传推介材料仅供投资者参考，不构成众筹之光的任何推荐或投资建议。投资者应审慎决策、独立承担风险。</p>
+    </div>
+    <div class="c1160" style="text-align: center;">
+        <a href="#">关于我们</a><span class="sep">|</span>
+        <a href="#">加入我们</a><span class="sep">|</span>
+        <a href="#">我要融资</a><span class="sep">|</span>
+        <a href="#">在线反馈</a><span class="sep">|</span>
+        <a href="#">用户注册协议</a><span class="sep">|</span>
+        <a href="#">帮助中心</a><span class="sep">|</span>
+        <a href="#">免责声明</a><span class="sep">|</span>
+        <a href="#">隐私权声明</a>
+    </div>
+</div>
+{% endblock %}
+<script type="text/javascript">
+ 	 /*筛选列表内容区*/
+ 	$(".product-list-more i").click(function(){
+ 	var exp = this.innerHTML == '更多';
+ 	this.innerHTML = exp?'收起':'更多';
+ 	$(this).parent().parent().find(".fl").height(exp ? 'auto' : '38px');
+ 	var setheight = $(this).parent().parent().children(".fl").innerHeight();
+ 	$(this).parent().parent().find("dt").height(setheight);
+ 	if (this.innerHTML == '更多') {
+ 	$(this).parent().find("img").css("transform","rotate(0deg)")
+ 	}else{
+ 	$(this).parent().find("img").css("transform","rotate(180deg)")
+ 	}
+ 	})
+ 	 
+ 	function removeChose(obj, index) { //删除筛选
+ 	var _index = index++;
+ 	$("#ul_select").children(".select-list").eq(index).find(".selected").removeClass("selected");//删除商品选中样式
+ 	$("#ul_select").children(".select-list").eq(index).find("dl").text();
+ 	$("#ul_select").children("li").eq(_index).show();
+ 	obj.remove();//当前按钮删除
+ 	getResult();
+ 	}
+ 	/*筛选全部删除*/
+ 	$("#clearAll").click(function () {
+ 	$(this).parent().parent().find("dd").remove()
+ 	$("#ul_select").children(".select-list").show();
+ 	})
+ 	$(function() {
+ 	$("#ul_select").find(".dl").find("div").children("dd").click(function() { //每个分类行绑定点击事件
+ 	$(this).addClass("selected").siblings("dd").removeClass("selected"); //当前元素选中，其余删除选中样式
+ 	var index = $(this).parents(".select-list").index();//获取父级索引index
+ 	var propertyName = $(this).parent().parent().children("dt").text();//获取当前选项的属性
+ 	$(this).parent().parent().parent().hide();
+ 	var goods = $(this).children("span").text();//获取当前选项名称
+ 	$("#select_" + index).remove();//删除当前索引的筛选
+ 	if (goods != '全部') { //若不是全部 在筛选区域添加选项
+ 	$("#dl_result").append("<dd id='select_" + index + "' class='selected' οnclick=removeChose($(this),'" + index + "')><span><i>"+propertyName+"</i><i>" + goods + "</i><i>x</i></span></dd>");
+ 	}
+ 	getResult();
+ 	})
+ 	});
+ 	function getResult() { //结果处理
+ 	var len_chose = $("#dl_result").children(".selected").length;
+ 	if (len_chose > 0) { //若是筛选区域选中项大于0
+ 	$(".select-no").hide();//暂时没有选择过滤条件 隐藏
+ 	} else {
+ 	$(".select-no").show();//暂时没有选择过滤条件 显示
+ 	}
+ 	}
+</script>

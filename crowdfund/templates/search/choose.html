@@ -1,0 +1,124 @@
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/searchcss.css' %}">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <title>choose</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="header_box1">
+        <div class="header_box2">
+            <a class="logo_box" href="{% url 'crowdfund:index' %}"><img src="{% static 'images/7.jpg' %}"/></a>
+            <div class="nam">
+                <h1>众筹之光</h1>
+                <p>www.zhongchouzhiguang.com</p>
+            </div>
+        </div>
+        <div class="menu">
+            <span><a href="{% url 'crowdfund:thefirst' %}">首页</a></span>
+            <span><a href="{% url 'crowdfund:search' %}">优质项目</a></span>
+            <span><a href="{% url 'crowdfund:add' %}">发起众筹</a></span>
+            <span><a href="{% url 'crowdfund:guide' %}">新手指南</a></span>
+            <span><a href="{% url 'crowdfund:myself' %}">个人中心</a></span>
+            <span style="position: relative; margin-left:40px;">
+                <form method="get" action="/search/">
+                    {% csrf_token %}
+                    <input type="search" placeholder="搜索" required>
+                    <button type="submit">搜索</button>
+                </form>
+            </span>
+            <div class="btns" style="margin-left: 800px;margin-top:-20px;">
+                <a href="{% url 'crowdfund:login' %}"><button class="white small" style="">登录</button></a>
+                <a href="{% url 'crowdfund:register' %}"><button class="blue small ml20 mr20">注册</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="crumbs">
+        <a href="#">首页</a> &nbsp;&gt;&nbsp;
+        <span class="crumbs-level" id="crumbsLevel"><a href="#">优质项目</a> -&gt; 筛选</span>
+    </div>
+</div>
+<div class="word" style="margin-top:40px;">
+    <p>最新商品投资实时播报：</p>
+    <marquee  behavior="scroll" direction="up" height="50" οnmοuseοver=this.stop() οnmοuseοut=this.start() scrollamount=3 style="margin-left:200px;margin-top: 0px;">
+        <span style="color:#000000;">会员s***z投资了西安瑶兰城市民宿</span><br/>
+        <span style="color: #000000;">会员s***f投资了颜值派唐山远洋城店（二期）</span></br>
+        <span style="color: #000000;">会员s***a投资了唱吧麦颂KTV北京百子湾店二期</span>
+    </marquee>
+</div>
+<div class="container marketing">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-3">
+            <a href="#"><img class="img-circle" src="{% static 'images/r2.jpg' %}"  width="200" height="200"></a>
+            <h5>北京CCWORK（西沃空间）四期</h5>
+            <p class="text-info">店铺优势：装修设计前沿，服务理念先进，客户稳定
+            </p>
+            <p class="num-of-person">支持人数：130</p>
+            <p class="f16 c999 money-collect-wrap clearfix">
+                <span class="fl">已筹</span><span class="collect-money fl">&yen;26000</span>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img class="img-circle" src="{% static 'images/r4.jpg' %}"  width="200" height="200"></a>
+            <h5>宽饭 北京马甸店</h5>
+            <p class="text-info">宽饭由宽饭餐饮及味妙餐饮联合打造，创始核心由从事餐饮、营养及空间设计的专业人士组成。
+            </p>
+            <p class="num-of-person">支持人数：8</p>
+            <p class="f16 c999 money-collect-wrap clearfix">
+                <span class="fl">已筹</span><span class="collect-money fl">&yen;90000</span>
+            </p>
+        </div>
+    </div><!-- /.row -->
+    <hr/>
+</div><!-- /.container -->
+<div class="footer">
+    <div class="c11">
+        </br>
+        <a href="#" class="footic01">众筹之光-打造专业众筹平台</a>
+        <a href="#" class="footic02">全球众筹金融科技服务平台</a>
+        <a href="#" class="footic03">造就百亿市值公司</a>
+    </div>
+    <div class="row" >
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>关于我们</h5>
+            <h6><a href="#" >公司简介</a></h6>
+            <h6><a href="#">股东成员</a></h6>
+            <h6><a href="#">发展历程</a></h6>
+            <h6><a href="#">媒体报道</a></h6>
+            <h6><a href="#">联系我们</a></h6>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>帮助中心</h5>
+            <h6><a href="{% url 'crowdfund:guide' %}">新手指南</a></h6>
+            <h6><a href="#">什么是众投？</a></h6>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>投资指南</h5>
+            <h6><a href="#">领投介绍</a></h6>
+            <h6><a href="#">跟投介绍</a></h6>
+            <h6><a href="#">众投投资流程</a></h6>
+        </div>
+        <div class="col-lg-3" style="text-align: center;">
+            <h5>客服热线</h5>
+            <h6><a href="#">111-222-3333</a></h6>
+            <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+            <h6><a href="#">在线反馈</a></h6>
+            <h6><a href="#">周一至周五(9:00-18:00)</a></h6>
+        </div>
+    </div>
+    <div class="world" style="text-align: center;color: #6e6e6e;">
+        <p >以上项目信息来自于基金公司、资管公司、基金子公司、创业公司等提供给众筹之光的信息资料，基金公司、资管公司、基金子公司、创业公司等对其提供信息的真实可靠性和完整准确性负责。投资者应仔细阅读理财产品的法律文件，了解项目风险和收益特征（包括系统性风险和特定产品所特有的投资风险等）。投资者应根据自身资产状况、风险承受能力选择适合自己的股权投资产品。众筹之光提供的宣传推介材料仅供投资者参考，不构成众筹之光的任何推荐或投资建议。投资者应审慎决策、独立承担风险。</p>
+    </div>
+    <div class="c1160" style="text-align: center;">
+        <a href="#">关于我们</a><span class="sep">|</span>
+        <a href="#">加入我们</a><span class="sep">|</span>
+        <a href="#">我要融资</a><span class="sep">|</span>
+        <a href="#">在线反馈</a><span class="sep">|</span>
+        <a href="#">用户注册协议</a><span class="sep">|</span>
+        <a href="#">帮助中心</a><span class="sep">|</span>
+        <a href="#">免责声明</a><span class="sep">|</span>
+        <a href="#">隐私权声明</a>
+    </div>
+</div>
+{% endblock %}
